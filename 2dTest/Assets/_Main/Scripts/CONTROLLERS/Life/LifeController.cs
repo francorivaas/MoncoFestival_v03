@@ -34,6 +34,9 @@ public class LifeController : MonoBehaviour
     public Action<float, float> OnGetDamage;
     public Action<float> OnLifeChange;
 
+    [SerializeField]
+    private EnemyCounter enemyCounter;
+
     void Start()
     {
         //currentTimeToHeal = 0.0f;
@@ -43,11 +46,12 @@ public class LifeController : MonoBehaviour
 
     private void Update()
     {
-        if (currentLife > 0 && currentLife < maxLife)
+        if (currentLife < maxLife)
         {
-            //canHeal = true;
+            enemyCounter.canRecover = true;
         }
             
+
 
         /*currentTimeToHeal += Time.deltaTime;
 
