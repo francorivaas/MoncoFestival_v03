@@ -24,6 +24,15 @@ public class EnemyCounter : MonoBehaviour
 
     private void Update()
     {
-        if (canRecover && enemiesKilled == 10) lifeController.currentLife += 100f;
+        Debug.Log(enemiesKilled);
+
+        if (enemiesKilled == 10)
+        {
+            canRecover = true;
+        }
+        else
+        {
+            canRecover = false;
+        }  
     }
 }

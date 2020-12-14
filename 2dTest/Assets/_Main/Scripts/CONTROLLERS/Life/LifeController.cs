@@ -13,6 +13,7 @@ public class LifeController : MonoBehaviour
     [SerializeField] 
     private float maxLife = 100f;
     public float currentLife;
+    private float lifePlus = 100.0f;
 
     public UnityEvent OnDeath = new UnityEvent();
 
@@ -46,9 +47,9 @@ public class LifeController : MonoBehaviour
 
     private void Update()
     {
-        if (currentLife < maxLife)
+        if (currentLife < maxLife && enemyCounter.canRecover)
         {
-            enemyCounter.canRecover = true;
+            HealthRecover();
         }
             
 
@@ -91,6 +92,11 @@ public class LifeController : MonoBehaviour
         }
     }
 
+    public void HealthRecover()
+    {
+        enemyCounter.canRecover = false;
+        currentLife += lifePlus;
+    }
 
     public float GetCurrentLife()
     {
