@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class KILLER : MonoBehaviour
 {
-    [SerializeField] 
-    private GameObject player;
-
-    private GameManager game;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        CharacterController player = GetComponent<CharacterController>();
+
+        if (player != null)
         {
-            /*
-            game.GameOver();
-            */
+            Debug.Log("MATAMOS AL PLAYER PAPA");
+            Destroy(player);
+        }
+
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("MATAMOS AL PLAYER PAPA, PERO CON UN RE TAG, RE DELLOOOOOOOL");
+            Destroy(collision.gameObject);
         }
     }
 }
