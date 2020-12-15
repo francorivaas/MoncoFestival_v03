@@ -12,6 +12,8 @@ public class InstantiatorController : MonoBehaviour
     [SerializeField]
     private float currentTimeToInstantiate = 0.0f;
 
+    [SerializeField]
+    private GameObject instantiator = null;
     private void Start()
     {
         currentTimeToInstantiate = timeToInstantiate;
@@ -23,7 +25,7 @@ public class InstantiatorController : MonoBehaviour
 
         if (currentTimeToInstantiate >= timeToInstantiate)
         {
-            Instantiate(genericGameObject, transform.position, Quaternion.identity);
+            Instantiate(genericGameObject, instantiator.transform.position, Quaternion.identity);
 
             Restart();
         }
