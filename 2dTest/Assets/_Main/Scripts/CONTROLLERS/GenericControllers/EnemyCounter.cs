@@ -24,8 +24,6 @@ public class EnemyCounter : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(enemiesKilled);
-
         if (enemiesKilled == 10)
         {
             canRecover = true;

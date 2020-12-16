@@ -10,13 +10,11 @@ public class KILLER : MonoBehaviour
 
         if (player != null)
         {
-            Debug.Log("MATAMOS AL PLAYER PAPA");
             Destroy(player);
         }
 
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("MATAMOS AL PLAYER PAPA, PERO CON UN RE TAG, RE DELLOOOOOOOL");
             Destroy(collision.gameObject);
         }
     }
