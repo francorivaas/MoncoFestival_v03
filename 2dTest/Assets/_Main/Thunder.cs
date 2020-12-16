@@ -25,7 +25,6 @@ public class Thunder : MonoBehaviour
 
         if (player != null || collision.CompareTag("Player"))
         {
-            Debug.Log("DAALEEE");
             Destroy(collision.gameObject);
         }
     }
