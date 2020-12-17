@@ -967,7 +967,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &332479219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,8 +1540,8 @@ GameObject:
   - component: {fileID: 510978840}
   - component: {fileID: 510978842}
   - component: {fileID: 510978841}
-  m_Layer: 10
-  m_Name: DownCollider(KILLER) (1)
+  m_Layer: 13
+  m_Name: LEFTCollider
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2949,7 +2949,7 @@ GameObject:
   - component: {fileID: 944379630}
   - component: {fileID: 944379629}
   m_Layer: 10
-  m_Name: DownCollider(KILLER)
+  m_Name: DOWNCollider(KILLER)
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3974,9 +3974,9 @@ GameObject:
   - component: {fileID: 1247583495}
   - component: {fileID: 1247583497}
   - component: {fileID: 1247583496}
-  m_Layer: 10
-  m_Name: DownCollider(KILLER) (2)
-  m_TagString: Untagged
+  m_Layer: 13
+  m_Name: RIGHTCollider
+  m_TagString: Colliders
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5043,6 +5043,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1753800866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1753800867}
+  m_Layer: 0
+  m_Name: DEACTIVATOR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1753800867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753800866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1755973715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5767,7 +5797,7 @@ GameObject:
   - component: {fileID: 2065844000}
   - component: {fileID: 2065843999}
   m_Layer: 10
-  m_Name: UpCollider
+  m_Name: UPCollider
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5957,7 +5987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2085970941
 Transform:
   m_ObjectHideFlags: 0

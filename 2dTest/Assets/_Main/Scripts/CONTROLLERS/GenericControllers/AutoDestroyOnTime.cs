@@ -10,6 +10,13 @@ public class AutoDestroyOnTime : MonoBehaviour
     [SerializeField]
     private float currentLife = 0.0f;
 
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         currentLife += Time.deltaTime;
@@ -18,5 +25,11 @@ public class AutoDestroyOnTime : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Colliders")) animator.SetTrigger("Destroy");
+
     }
 }
