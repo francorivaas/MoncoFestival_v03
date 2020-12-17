@@ -25,6 +25,11 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] 
     private GameObject grenadePoint = null;
 
+    [Header("Sounds")]
+
+    [SerializeField]
+    private GameObject shotSound = null;
+
     //RB
     private Rigidbody2D myRb;
 
@@ -65,6 +70,8 @@ public class CharacterAttack : MonoBehaviour
     }
     void Start()
     {
+        shotSound.gameObject.SetActive(false);
+
         currentNextBullet = nextBullet;
 
         currentGrenades = maxGrenades;
@@ -115,6 +122,9 @@ public class CharacterAttack : MonoBehaviour
         //...ahí disparas::::::::::::::fijate que la currentAmmo sea mayor a 0
         if (Input.GetButton("Fire1") && (canAttack)) /*&& (currentAmmo > 0))*/
         {
+            //Sound Settings
+            shotSound.gameObject.SetActive(true);
+
             //llamo al metodo de disparar
             Shoot();
             
@@ -124,7 +134,10 @@ public class CharacterAttack : MonoBehaviour
             //el cooldown timer y attackcooldown se reinician
             cooldownTimer = attackCooldown;
         }
-        
+        else
+            shotSound.gameObject.SetActive(false);
+
+
         /*
         if (currentAmmo <= 0)
             canAttack = false;
@@ -134,8 +147,8 @@ public class CharacterAttack : MonoBehaviour
             Reload();
         }
         */
-       
-        
+
+
         if (Input.GetKeyDown(KeyCode.G) && hasGrenade)
         {
             ShootGrenade();
@@ -156,7 +169,6 @@ public class CharacterAttack : MonoBehaviour
                 Instantiate(bullet, firePoint.position, firePoint.rotation);
             }
         }
-        
     }
 
     /*

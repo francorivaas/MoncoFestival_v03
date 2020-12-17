@@ -17,6 +17,14 @@ public class BulletController : MonoBehaviour
     [SerializeField] 
     private GameObject VFX = null;
 
+    [SerializeField]
+    private GameObject getShotSound = null;
+
+    private void Start()
+    {
+        getShotSound.gameObject.SetActive(false);
+    }
+
     private void Update()
     {
         currentLifeTime += Time.deltaTime;
@@ -36,9 +44,18 @@ public class BulletController : MonoBehaviour
 
         if (enemy != null)
         {
+            //Sound settings
+            getShotSound.gameObject.SetActive(true);
+            Debug.Log("im shooting an enemy");
+
+            //VFX settings
             Instantiate(VFX, transform.position, Quaternion.identity);
+
+            //Events
             enemy.TakePlayerDamage(damage);
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
+        else
+            getShotSound.gameObject.SetActive(false);
     }
 }
