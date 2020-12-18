@@ -21,7 +21,7 @@ public class OnTriggerDestroy : MonoBehaviour
         }
         else
             gemPickUpSound.gameObject.SetActive(false);
-}
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
