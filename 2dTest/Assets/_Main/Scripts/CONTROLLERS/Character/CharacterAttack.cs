@@ -30,6 +30,8 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField]
     private GameObject shotSound = null;
 
+    [SerializeField]
+    private GameObject jetpackSound = null;
     //RB
     private Rigidbody2D myRb;
 
@@ -70,6 +72,7 @@ public class CharacterAttack : MonoBehaviour
     }
     void Start()
     {
+        jetpackSound.gameObject.SetActive(false);
         shotSound.gameObject.SetActive(false);
 
         currentNextBullet = nextBullet;
@@ -107,6 +110,8 @@ public class CharacterAttack : MonoBehaviour
 
         if(Input.GetButtonUp("Fire2"))
         {
+            jetpackSound.gameObject.SetActive(false);
+
             canUseJetPack = false;
 
             animator.SetBool("Jetpack", false);
@@ -190,6 +195,7 @@ public class CharacterAttack : MonoBehaviour
         GameObject jetpack = Instantiate(jetPack, transform.position, Quaternion.identity);
         Rigidbody2D rb2 = jetpack.GetComponent<Rigidbody2D>();
         rb2.AddForce(transform.up * 10, ForceMode2D.Force);
+        jetpackSound.gameObject.SetActive(true);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
