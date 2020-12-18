@@ -2282,7 +2282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &755339983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2852,7 +2852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gems: {fileID: 1454431807435798462, guid: 415b912681c6a3f49ae2890310ef668e, type: 3}
-  spawnRate: 5
+  spawnRate: 1
 --- !u!4 &877241242
 Transform:
   m_ObjectHideFlags: 0

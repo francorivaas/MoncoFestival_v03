@@ -7,13 +7,14 @@ public class RandomSpawner : MonoBehaviour
     [SerializeField]
     private GameObject gems = null;
 
-    private Vector2 spawnZone;
-
     [SerializeField]
     private float spawnRate = 2.0f;
     private float nextSpawn = 0.0f;
 
     private float randomX;
+    private float randomY;
+
+    private Vector2 spawnZone;
 
     private void Update()
     {
@@ -22,8 +23,9 @@ public class RandomSpawner : MonoBehaviour
             nextSpawn = Time.time + spawnRate;
 
             randomX = Random.Range(-15, 15);
+            randomY = Random.Range(0, -15);
 
-            spawnZone = new Vector2(randomX + transform.position.x, randomX + transform.position.y);
+            spawnZone = new Vector2(randomX - transform.position.x, randomY + transform.position.y);
 
             Instantiate(gems, spawnZone, Quaternion.identity);
         }
