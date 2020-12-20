@@ -99,10 +99,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  currentTimeToHeal: 0
-  canHeal: 1
-  canTakeDamage: 1
   sceneName: MainMenu
+  enemyCounter: {fileID: 0}
 --- !u!114 &8470541175549660245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,13 +128,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 4
-  maxAmmo: 1000
   firePoint: {fileID: 2646209428939415080}
   bullet: {fileID: 9001002451654745599, guid: 55ecbc62fe97afa4cb0ab4a392764b90, type: 3}
   grenadePrefab: {fileID: 6437932012598909782, guid: 744230932e3a9034ebf3ded1d6756712,
     type: 3}
   jetPack: {fileID: 6265373722383827195, guid: 007c5def5a4b62b4f9cfc626f6522e27, type: 3}
   grenadePoint: {fileID: 4425325601748954637}
+  shotSound: {fileID: 0}
+  jetpackSound: {fileID: 0}
   maxGrenades: 5
   currentGrenades: 0
 --- !u!61 &8470541175549660244
@@ -152,7 +151,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.056840897, y: 0.056614757}
+  m_Offset: {x: 0.056840897, y: -0.05202806}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0974846, y: 3.065244}
+  m_Size: {x: 1.0974846, y: 2.8965251}
   m_EdgeRadius: 0
 --- !u!50 &8470541175549660240
 Rigidbody2D:
@@ -268,7 +267,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0032491684, y: 0.8419591}
+  m_Offset: {x: -0.013001442, y: 0.7538276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -279,7 +278,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2806377, y: 1.5235059}
+  m_Size: {x: 2.2567158, y: 1.289639}
   m_EdgeRadius: 0
 --- !u!1 &8957840445408398215
 GameObject:

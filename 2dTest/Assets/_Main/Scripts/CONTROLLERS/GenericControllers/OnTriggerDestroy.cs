@@ -27,6 +27,7 @@ public class OnTriggerDestroy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            Debug.Log("LOLARDO");
             Destroy(gameObject);
         }
     }
@@ -35,6 +36,7 @@ public class OnTriggerDestroy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            Debug.Log("LOLARDO");
             Destroy(gameObject);
         }
     }
@@ -43,6 +45,7 @@ public class OnTriggerDestroy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            Debug.Log("LOLARDO");
             Destroy(gameObject);
         }
     }

@@ -22,8 +22,8 @@ public class RandomSpawner : MonoBehaviour
         {
             nextSpawn = Time.time + spawnRate;
 
-            randomX = Random.Range(-15, 15);
-            randomY = Random.Range(0, -15);
+            randomX = Random.Range(-5, 5);
+            randomY = Random.Range(0, -5);
 
             spawnZone = new Vector2(randomX - transform.position.x, randomY + transform.position.y);
 
