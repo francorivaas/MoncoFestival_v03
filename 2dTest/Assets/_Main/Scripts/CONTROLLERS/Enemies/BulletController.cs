@@ -46,7 +46,6 @@ public class BulletController : MonoBehaviour
         {
             //Sound settings
             getShotSound.gameObject.SetActive(true);
-            Debug.Log("im shooting an enemy");
 
             //VFX settings
             Instantiate(VFX, transform.position, Quaternion.identity);
