@@ -7,6 +7,14 @@ public class Thunder : MonoBehaviour
     private float maxTime = 2.0f;
     private float currentTime = 0.0f;
 
+    [SerializeField]
+    private GameObject thunderSound = null;
+
+    private void Start()
+    {
+        thunderSound.gameObject.SetActive(true);
+    }
+
     private void Update()
     {
         maxTime -= Time.deltaTime;
