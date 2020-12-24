@@ -15,6 +15,9 @@ public class FollowIA : MonoBehaviour
 
     //private LifeController lifeController;
 
+    [SerializeField]
+    private GameObject buzzSound = null;
+
     private void Awake()
     {
         //lifeController = GetComponent<LifeController>();
@@ -24,6 +27,7 @@ public class FollowIA : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        buzzSound.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -32,6 +36,8 @@ public class FollowIA : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             transform.rotation = Quaternion.identity;
+
+            buzzSound.gameObject.SetActive(true);
         }
 
 

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemPickUpSound: {fileID: 8638626237291149122}
+  animator: {fileID: 0}
 --- !u!61 &8416767157706261196
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ public class OnTriggerDestroy : MonoBehaviour
     [SerializeField]
     private GameObject gemPickUpSound = null;
 
+    [SerializeField]
+    private Animator animator;
+
     private void Start()
     {
         gemPickUpSound.gameObject.SetActive(false);
@@ -16,9 +19,14 @@ public class OnTriggerDestroy : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            gemPickUpSound.gameObject.SetActive(true);
-            Destroy(gameObject, 0.2f);
+            GemsAmount.gemsAmount += 1;
+
+            animator.SetTrigger("Plus");
+
+            //gemPickUpSound.gameObject.SetActive(true);
+            Destroy(gameObject);
         }
+
         else
             gemPickUpSound.gameObject.SetActive(false);
     }
