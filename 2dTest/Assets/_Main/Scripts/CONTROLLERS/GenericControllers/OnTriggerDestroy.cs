@@ -23,34 +23,15 @@ public class OnTriggerDestroy : MonoBehaviour
             Destroy(gameObject);
         }
 
-        else
+        else if (collision.CompareTag("Ground"))
+        {
             gemPickUpSound.gameObject.SetActive(false);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("LOLARDO");
             Destroy(gameObject);
         }
-    }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
+        else
         {
-            Debug.Log("LOLARDO");
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("LOLARDO");
-            Destroy(gameObject);
+            gemPickUpSound.gameObject.SetActive(false);
         }
     }
 }
