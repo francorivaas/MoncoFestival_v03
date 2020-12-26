@@ -945,7 +945,7 @@ ScriptsOnlyBuild:
     className: CinemachineMixingCamera
   - hash:
       serializedVersion: 2
-      Hash: 1cbe751e1b987e6bb1c20f6092213782
+      Hash: d31721f8890ea864d2f910136fd7f0ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OnTriggerDestroy
