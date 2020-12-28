@@ -663,7 +663,7 @@ ScriptsOnlyBuild:
     className: CinemachineTrack
   - hash:
       serializedVersion: 2
-      Hash: e3819336c238c97f49668ebae5598c09
+      Hash: 75fe75fb45bacbc06552a41a079869fc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
