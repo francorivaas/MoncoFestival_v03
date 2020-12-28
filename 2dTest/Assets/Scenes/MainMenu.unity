@@ -674,6 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c8b915c06cea1489cbda0515d3fcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonExit: {fileID: 1069142246}
   buttonPlay: {fileID: 335341718}
   buttonHelp: {fileID: 1354395582}
   gameSceneName: MoncoFestival

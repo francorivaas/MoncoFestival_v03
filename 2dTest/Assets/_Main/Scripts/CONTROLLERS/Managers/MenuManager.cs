@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField]
+    private Button buttonExit = null;
+
     [SerializeField] 
     private Button buttonPlay = null;
 
@@ -32,17 +35,20 @@ public class MenuManager : MonoBehaviour
         buttonHelp.onClick.AddListener(OnClickHelpHandler);
         
         buttonPlay.onClick.AddListener(OnClickHandler);
-        
+
+        buttonExit.onClick.AddListener(OnExitClickHandler);
     }
 
     private void Start()
     {
         optionsMenu.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(true);
+        
     }
 
     void OnClickHandler()
     {
+
         canCount = true;
 
         title.text = "GO!";
@@ -50,9 +56,16 @@ public class MenuManager : MonoBehaviour
 
     void OnClickHelpHandler()
     {
+        
         optionsMenu.SetActive(true);
 
         mainMenu.SetActive(false);
+    }
+
+    void OnExitClickHandler()
+    {
+        Application.Quit();
+        Debug.Log("mal de app");
     }
 
     void Update()
