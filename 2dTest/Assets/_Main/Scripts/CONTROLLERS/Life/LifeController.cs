@@ -37,6 +37,13 @@ public class LifeController : MonoBehaviour
     [SerializeField]
     private EnemyCounter enemyCounter;
 
+    private Animator animator = null;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     void Start()
     {
         //currentTimeToHeal = 0.0f;
@@ -80,6 +87,8 @@ public class LifeController : MonoBehaviour
     {
         //if(canTakeDamage)
         currentLife -= damage;
+
+        animator.SetTrigger("TakeDamage");
 
         OnGetDamage.Invoke(currentLife, damage);
 
