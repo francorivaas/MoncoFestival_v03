@@ -33,7 +33,6 @@ public class DoDamage : MonoBehaviour
 
         if (timeToShowCollider <= currentTimeToShowCollider)
         {
-            Debug.Log("el col está del orto mal y en pija");
             col.enabled = true;
         }
     }
