@@ -39,6 +39,10 @@ public class LifeController : MonoBehaviour
 
     private Animator animator = null;
 
+    [SerializeField]
+    private GameObject monkeySound = null;
+
+    private bool canTakeDamage = false;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -49,6 +53,9 @@ public class LifeController : MonoBehaviour
         //currentTimeToHeal = 0.0f;
         //canTakeDamage = true;
         currentLife = maxLife;
+        canTakeDamage = false;
+
+        monkeySound.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -85,10 +92,11 @@ public class LifeController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        //if(canTakeDamage)
         currentLife -= damage;
 
         animator.SetTrigger("TakeDamage");
+
+        monkeySound.gameObject.SetActive(true);
 
         OnGetDamage.Invoke(currentLife, damage);
 

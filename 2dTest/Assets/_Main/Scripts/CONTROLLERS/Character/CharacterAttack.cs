@@ -5,24 +5,24 @@ public class CharacterAttack : MonoBehaviour
     [Header("Cooldown")]
     [SerializeField] private float attackCooldown = 2.0f;
     private float cooldownTimer = 0.0f;
-    
+
     [Header("Ammo")]
-    //[SerializeField] private float maxAmmo = 70.0f;
-    //private float currentAmmo = 0.0f;
-    
+    [SerializeField] private float maxAmmo = 70.0f;
+    private float currentAmmo = 0.0f;
+
     [Header("Prefabs")]
     public Transform firePoint;
     public GameObject bullet;
 
     [Header("GameObjects")]
 
-    [SerializeField] 
+    [SerializeField]
     private GameObject grenadePrefab = null;
 
-    [SerializeField] 
+    [SerializeField]
     private GameObject jetPack = null;
 
-    [SerializeField] 
+    [SerializeField]
     private GameObject grenadePoint = null;
 
     [Header("Sounds")]
@@ -63,7 +63,7 @@ public class CharacterAttack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(canUseJetPack)
+        if (canUseJetPack)
         {
             UseJetPack();
         }
@@ -80,12 +80,14 @@ public class CharacterAttack : MonoBehaviour
         currentGrenades = maxGrenades;
 
         cooldownTimer = attackCooldown;
-        
+
         //la currentAmmo es igual a la maxAmmo
-        //currentAmmo = maxAmmo;
+        currentAmmo = maxAmmo;
     }
     void Update()
     {
+        Debug.Log(currentAmmo);
+
         currentNextBullet += Time.deltaTime;
 
         if (currentNextBullet >= nextBullet)
@@ -93,7 +95,7 @@ public class CharacterAttack : MonoBehaviour
             canShootNextBullet = true;
             currentNextBullet = 0.0f;
         }
-        
+
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -108,7 +110,7 @@ public class CharacterAttack : MonoBehaviour
             animator.SetBool("Jetpack", true);
         }
 
-        if(Input.GetButtonUp("Fire2"))
+        if (Input.GetButtonUp("Fire2"))
         {
             jetpackSound.gameObject.SetActive(false);
 
@@ -116,26 +118,26 @@ public class CharacterAttack : MonoBehaviour
 
             animator.SetBool("Jetpack", false);
         }
-        
+
         //restas el time.delta time....
         attackCooldown -= Time.deltaTime;
-        
+
         //...hasta que sea 0
         if (attackCooldown <= 0)
             canAttack = true;
-        
+
         //...ahí disparas::::::::::::::fijate que la currentAmmo sea mayor a 0
-        if (Input.GetButton("Fire1") && (canAttack)) /*&& (currentAmmo > 0))*/
+        if (Input.GetButton("Fire1") && (canAttack) && currentAmmo > 0)
         {
             //Sound Settings
             shotSound.gameObject.SetActive(true);
 
             //llamo al metodo de disparar
             Shoot();
-            
+
             //resto 1 a la munición
-            //currentAmmo -= 1;
-            
+            currentAmmo -= 1;
+
             //el cooldown timer y attackcooldown se reinician
             cooldownTimer = attackCooldown;
         }
@@ -143,7 +145,7 @@ public class CharacterAttack : MonoBehaviour
             shotSound.gameObject.SetActive(false);
 
 
-        /*
+
         if (currentAmmo <= 0)
             canAttack = false;
 
@@ -151,7 +153,7 @@ public class CharacterAttack : MonoBehaviour
         {
             Reload();
         }
-        */
+
 
 
         if (Input.GetKeyDown(KeyCode.G) && hasGrenade)
@@ -164,7 +166,7 @@ public class CharacterAttack : MonoBehaviour
         if (currentGrenades <= 0)
             hasGrenade = false;
 
-        
+
 
         void Shoot()
         {
@@ -176,12 +178,13 @@ public class CharacterAttack : MonoBehaviour
         }
     }
 
-    /*
+    
     private void Reload()
     {
         currentAmmo = maxAmmo;
     
-    */
+    
+    }
     
     private void ShootGrenade()
     {

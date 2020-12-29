@@ -2437,6 +2437,7 @@ MonoBehaviour:
       m_Calls: []
   sceneName: 
   enemyCounter: {fileID: 0}
+  monkeySound: {fileID: 0}
 --- !u!4 &498458386 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6171471835405870492, guid: c0146e50e804fa84c8f553331280ddba,
@@ -4039,7 +4040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &755339983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8083,6 +8084,12 @@ Transform:
   m_Father: {fileID: 863951610}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1580036069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2388229740184702911, guid: 09698a95e3c8f6c479e99c3503845398,
+    type: 3}
+  m_PrefabInstance: {fileID: 8470541173419265068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1604280864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11048,6 +11055,11 @@ PrefabInstance:
       propertyPath: enemyCounter
       value: 
       objectReference: {fileID: 618551834}
+    - target: {fileID: 4345438977906629851, guid: 09698a95e3c8f6c479e99c3503845398,
+        type: 3}
+      propertyPath: monkeySound
+      value: 
+      objectReference: {fileID: 1580036069}
     - target: {fileID: 8470541175549660246, guid: 09698a95e3c8f6c479e99c3503845398,
         type: 3}
       propertyPath: m_LocalPosition.x
