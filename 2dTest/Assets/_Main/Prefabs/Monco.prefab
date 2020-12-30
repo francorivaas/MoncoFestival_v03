@@ -177,7 +177,7 @@ GameObject:
   m_Layer: 9
   m_Name: Monco
   m_TagString: Player
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2800000, guid: 299293daac0c4c7439dc7c745b6fff2b, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -229,7 +229,7 @@ MonoBehaviour:
         m_CallState: 2
   sceneName: MainMenu
   enemyCounter: {fileID: 0}
-  monkeySound: {fileID: 0}
+  monkeySound: {fileID: 2388229740184702911}
 --- !u!114 &8470541175549660245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 4
+  maxAmmo: 100
+  currentAmmo: 100
   firePoint: {fileID: 2646209428939415080}
   bullet: {fileID: 9001002451654745599, guid: 55ecbc62fe97afa4cb0ab4a392764b90, type: 3}
   grenadePrefab: {fileID: 6437932012598909782, guid: 744230932e3a9034ebf3ded1d6756712,

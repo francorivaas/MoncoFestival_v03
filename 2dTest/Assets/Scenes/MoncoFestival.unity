@@ -3812,6 +3812,7 @@ Transform:
   - {fileID: 6521845767286853685}
   - {fileID: 1753800867}
   - {fileID: 1867167319}
+  - {fileID: 741809219}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3821,6 +3822,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 256147090}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &741809218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741809219}
+  - component: {fileID: 741809220}
+  m_Layer: 0
+  m_Name: AmmoPowerUp Instantiator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &741809219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741809218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6, y: 5.32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 738752105}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &741809220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741809218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462ed8e9c57742e4c800c4607dd74611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gems: {fileID: 8699330630872038971, guid: 1f1e55a305ec5d34b9b2ef9f285f275e, type: 3}
+  spawnRate: 10
 --- !u!1 &742805372
 GameObject:
   m_ObjectHideFlags: 0
@@ -8084,12 +8130,6 @@ Transform:
   m_Father: {fileID: 863951610}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1580036069 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2388229740184702911, guid: 09698a95e3c8f6c479e99c3503845398,
-    type: 3}
-  m_PrefabInstance: {fileID: 8470541173419265068}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1604280864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8643,7 +8683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1753800867
 Transform:
   m_ObjectHideFlags: 0
@@ -8676,7 +8716,7 @@ MonoBehaviour:
   spawner4: {fileID: 966124658}
   spawner5: {fileID: 1203825204}
   spawner6: {fileID: 332479218}
-  deactivate: 0
+  deactivate: 1
 --- !u!1001 &1755973715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11055,11 +11095,6 @@ PrefabInstance:
       propertyPath: enemyCounter
       value: 
       objectReference: {fileID: 618551834}
-    - target: {fileID: 4345438977906629851, guid: 09698a95e3c8f6c479e99c3503845398,
-        type: 3}
-      propertyPath: monkeySound
-      value: 
-      objectReference: {fileID: 1580036069}
     - target: {fileID: 8470541175549660246, guid: 09698a95e3c8f6c479e99c3503845398,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11119,31 +11154,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Monco
-      objectReference: {fileID: 0}
-    - target: {fileID: 8470541175549660250, guid: 09698a95e3c8f6c479e99c3503845398,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8470541175549660250, guid: 09698a95e3c8f6c479e99c3503845398,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 2800000, guid: 299293daac0c4c7439dc7c745b6fff2b, type: 3}
-    - target: {fileID: 8470541175549660251, guid: 09698a95e3c8f6c479e99c3503845398,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8470541175549660251, guid: 09698a95e3c8f6c479e99c3503845398,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8470541175549660251, guid: 09698a95e3c8f6c479e99c3503845398,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09698a95e3c8f6c479e99c3503845398, type: 3}

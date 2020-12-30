@@ -7,8 +7,8 @@ public class CharacterAttack : MonoBehaviour
     private float cooldownTimer = 0.0f;
 
     [Header("Ammo")]
-    [SerializeField] private float maxAmmo = 70.0f;
-    private float currentAmmo = 0.0f;
+    public int maxAmmo = 100;
+    public int currentAmmo = 0;
 
     [Header("Prefabs")]
     public Transform firePoint;
@@ -127,7 +127,7 @@ public class CharacterAttack : MonoBehaviour
             canAttack = true;
 
         //...ahí disparas::::::::::::::fijate que la currentAmmo sea mayor a 0
-        if (Input.GetButton("Fire1") && (canAttack) && currentAmmo > 0)
+        if (Input.GetButton("Fire1") && (canAttack) && currentAmmo > 0 && canShootNextBullet)
         {
             //Sound Settings
             shotSound.gameObject.SetActive(true);
@@ -182,8 +182,6 @@ public class CharacterAttack : MonoBehaviour
     private void Reload()
     {
         currentAmmo = maxAmmo;
-    
-    
     }
     
     private void ShootGrenade()
