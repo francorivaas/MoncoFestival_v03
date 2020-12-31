@@ -81,11 +81,15 @@ public class CharacterAttack : MonoBehaviour
 
         cooldownTimer = attackCooldown;
 
+        AmmoAmount.ammoAmount = currentAmmo;
+
         //la currentAmmo es igual a la maxAmmo
         currentAmmo = maxAmmo;
     }
     void Update()
     {
+        AmmoAmount.ammoAmount = currentAmmo;
+
         Debug.Log(currentAmmo);
 
         currentNextBullet += Time.deltaTime;
@@ -137,6 +141,8 @@ public class CharacterAttack : MonoBehaviour
 
             //resto 1 a la munición
             currentAmmo -= 1;
+
+            //AmmoAmount.ammoAmount -= 1;
 
             //el cooldown timer y attackcooldown se reinician
             cooldownTimer = attackCooldown;
