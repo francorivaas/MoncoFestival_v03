@@ -32,27 +32,32 @@ public class FollowIA : MonoBehaviour
 
     private void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) > stopDistance)
+        if (!CutsceneController.isCutsceneOn)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-            transform.rotation = Quaternion.identity;
+            if (Vector2.Distance(transform.position, player.position) > stopDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                transform.rotation = Quaternion.identity;
 
-            buzzSound.gameObject.SetActive(true);
+                buzzSound.gameObject.SetActive(true);
+            }
+
+
+            if (transform.position.x > player.position.x)
+            {
+                transform.rotation = Quaternion.identity;
+            }
+
+
+            else if (transform.position.x < player.position.x)
+            {
+                transform.Rotate(180, 0, 180);
+                //canExplode = true;
+
+            }
         }
 
-
-        if (transform.position.x > player.position.x)
-        {
-            transform.rotation = Quaternion.identity;
-        }
-
-
-        else if (transform.position.x < player.position.x)
-        {
-            transform.Rotate(180, 0, 180);
-            //canExplode = true;
-            
-        }
+        
     }
 
     /*private void OnDeathListener()

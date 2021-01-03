@@ -18,16 +18,19 @@ public class RandomSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time > nextSpawn)
+        if (!CutsceneController.isCutsceneOn)
         {
-            nextSpawn = Time.time + spawnRate;
+            if (Time.time > nextSpawn)
+            {
+                nextSpawn = Time.time + spawnRate;
 
-            randomX = Random.Range(-10, 10);
-            randomY = Random.Range(0, 10);
+                randomX = Random.Range(-10, 10);
+                randomY = Random.Range(0, 10);
 
-            spawnZone = new Vector2(randomX - transform.position.x, randomY + transform.position.y);
+                spawnZone = new Vector2(randomX - transform.position.x, randomY + transform.position.y);
 
-            Instantiate(gems, spawnZone, Quaternion.identity);
+                Instantiate(gems, spawnZone, transform.rotation);
+            }
         }
     }
 }

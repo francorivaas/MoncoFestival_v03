@@ -22,19 +22,21 @@ public class RushEnemy : MonoBehaviour
 
     void Update()
     {
-        if (isMoving)
+        if (!CutsceneController.isCutsceneOn)
         {
-            transform.position += new Vector3(speed, 0.0f, 0.0f) * Time.deltaTime;
-            slimeSound.gameObject.SetActive(true);
-        }
+            if (isMoving)
+            {
+                transform.position += new Vector3(speed, 0.0f, 0.0f) * Time.deltaTime;
+                slimeSound.gameObject.SetActive(true);
+            }
 
-        currentLifeTime += Time.deltaTime;
+            currentLifeTime += Time.deltaTime;
 
-        if (currentLifeTime >= lifeTime)
-        {
-            isMoving = false;
-            Destroy(gameObject);
+            if (currentLifeTime >= lifeTime)
+            {
+                isMoving = false;
+                Destroy(gameObject);
+            }
         }
-            
     }
 }

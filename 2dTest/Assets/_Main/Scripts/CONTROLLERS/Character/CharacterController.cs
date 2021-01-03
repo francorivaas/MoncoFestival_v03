@@ -45,7 +45,7 @@ public class CharacterController : MonoBehaviour
         
         //var direction = vector.zero
 
-        if (!CutsceneOne.cutsceneOn)
+        if (!CutsceneController.isCutsceneOn)
         {
             if (Input.GetKey(KeyCode.A))
             {
