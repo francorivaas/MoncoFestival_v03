@@ -41,25 +41,24 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        /*
         optionsMenu.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(true);
-        
+        */
+
+        optionsMenu.gameObject.SetActive(false);
     }
 
     void OnClickHandler()
     {
-
         canCount = true;
-
+        optionsMenu.gameObject.SetActive(false);
         title.text = "GO!";
     }
 
     void OnClickHelpHandler()
     {
-        
-        optionsMenu.SetActive(true);
-
-        mainMenu.SetActive(false);
+        optionsMenu.gameObject.SetActive(true);
     }
 
     void OnExitClickHandler()
