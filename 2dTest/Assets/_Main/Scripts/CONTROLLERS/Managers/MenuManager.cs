@@ -22,7 +22,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] 
     private TextMeshProUGUI title = null;
 
-    [SerializeField] private GameObject optionsMenu = null;
+    [SerializeField] private GameObject helpMenu = null;
     [SerializeField] private GameObject mainMenu = null;
 
     float timeToPlay = 1f;
@@ -41,24 +41,22 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        /*
-        optionsMenu.gameObject.SetActive(false);
-        mainMenu.gameObject.SetActive(true);
-        */
-
-        optionsMenu.gameObject.SetActive(false);
+        helpMenu.gameObject.SetActive(false);
     }
 
     void OnClickHandler()
     {
         canCount = true;
-        optionsMenu.gameObject.SetActive(false);
+        helpMenu.gameObject.SetActive(false);
         title.text = "GO!";
     }
 
     void OnClickHelpHandler()
     {
-        optionsMenu.gameObject.SetActive(true);
+        helpMenu.gameObject.SetActive(true);
+        buttonExit.gameObject.SetActive(false);
+        buttonPlay.gameObject.SetActive(false);
+        title.gameObject.SetActive(false);
     }
 
     void OnExitClickHandler()
