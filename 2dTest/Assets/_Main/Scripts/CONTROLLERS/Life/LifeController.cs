@@ -51,6 +51,7 @@ public class LifeController : MonoBehaviour
     {
         //currentTimeToHeal = 0.0f;
         //canTakeDamage = true;
+
         currentLife = maxLife;
 
         monkeySound.gameObject.SetActive(false);
@@ -100,8 +101,13 @@ public class LifeController : MonoBehaviour
 
         if (currentLife <= 0)
         {
-            SceneManager.LoadScene(sceneName);
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void HealthRecover()

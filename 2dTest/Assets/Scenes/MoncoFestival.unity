@@ -12209,9 +12209,24 @@ PrefabInstance:
       objectReference: {fileID: 1852658976}
     - target: {fileID: 4345438977906629851, guid: 09698a95e3c8f6c479e99c3503845398,
         type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345438977906629851, guid: 09698a95e3c8f6c479e99c3503845398,
+        type: 3}
       propertyPath: enemyCounter
       value: 
       objectReference: {fileID: 618551834}
+    - target: {fileID: 4345438977906629851, guid: 09698a95e3c8f6c479e99c3503845398,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345438977906629851, guid: 09698a95e3c8f6c479e99c3503845398,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8470541175549660246, guid: 09698a95e3c8f6c479e99c3503845398,
         type: 3}
       propertyPath: m_LocalPosition.x
