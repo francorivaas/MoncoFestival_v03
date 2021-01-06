@@ -10,6 +10,8 @@ public class Thunder : MonoBehaviour
     [SerializeField]
     private GameObject thunderSound = null;
 
+    private LifeController monco;
+
     private void Start()
     {
         thunderSound.gameObject.SetActive(true);
@@ -29,11 +31,12 @@ public class Thunder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        LifeController player = GetComponent<LifeController>();
-
-        if (player != null || collision.CompareTag("Player"))
+        if (monco = collision.GetComponent<LifeController>())    
         {
-            Destroy(collision.gameObject);
+            if (monco != null)
+            {
+                monco.Die();
+            }
         }
     }
 }

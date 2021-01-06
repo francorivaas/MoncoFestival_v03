@@ -9669,7 +9669,7 @@ MonoBehaviour:
   spawner4: {fileID: 966124658}
   spawner5: {fileID: 1203825204}
   spawner6: {fileID: 332479218}
-  deactivate: 0
+  deactivate: 1
 --- !u!1001 &1755973715
 PrefabInstance:
   m_ObjectHideFlags: 0
