@@ -88,68 +88,72 @@ public class CharacterAttack : MonoBehaviour
     }
     void Update()
     {
-        AmmoAmount.ammoAmount = currentAmmo;
-
-        Debug.Log(currentAmmo);
-
-        currentNextBullet += Time.deltaTime;
-
-        if (currentNextBullet >= nextBullet)
+        if (!CutsceneController.isCutsceneOn)
         {
-            canShootNextBullet = true;
-            currentNextBullet = 0.0f;
+            AmmoAmount.ammoAmount = currentAmmo;
+
+            Debug.Log(currentAmmo);
+
+            currentNextBullet += Time.deltaTime;
+
+            if (currentNextBullet >= nextBullet)
+            {
+                canShootNextBullet = true;
+                currentNextBullet = 0.0f;
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            {
+                isGrounded = false;
+                myRb.AddForce(Vector2.up * jumpForceSpeed, ForceMode2D.Impulse);
+            }
+
+            if (Input.GetButton("Fire2"))
+            {
+                canUseJetPack = true;
+
+                animator.SetBool("Jetpack", true);
+            }
+
+            if (Input.GetButtonUp("Fire2"))
+            {
+                jetpackSound.gameObject.SetActive(false);
+
+                canUseJetPack = false;
+
+                animator.SetBool("Jetpack", false);
+            }
+
+            //restas el time.delta time....
+            attackCooldown -= Time.deltaTime;
+
+            //...hasta que sea 0
+            if (attackCooldown <= 0)
+                canAttack = true;
+
+            //...ahí disparas::::::::::::::fijate que la currentAmmo sea mayor a 0
+            if (Input.GetButton("Fire1") && (canAttack) && currentAmmo > 0 && canShootNextBullet)
+            {
+                //Sound Settings
+                shotSound.gameObject.SetActive(true);
+
+                //llamo al metodo de disparar
+                Shoot();
+
+                //resto 1 a la munición
+                currentAmmo -= 1;
+
+                //AmmoAmount.ammoAmount -= 1;
+
+                //el cooldown timer y attackcooldown se reinician
+                cooldownTimer = attackCooldown;
+            }
+            else
+                shotSound.gameObject.SetActive(false);
+
+
         }
-
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            isGrounded = false;
-            myRb.AddForce(Vector2.up * jumpForceSpeed, ForceMode2D.Impulse);
-        }
-
-        if (Input.GetButton("Fire2"))
-        {
-            canUseJetPack = true;
-
-            animator.SetBool("Jetpack", true);
-        }
-
-        if (Input.GetButtonUp("Fire2"))
-        {
-            jetpackSound.gameObject.SetActive(false);
-
-            canUseJetPack = false;
-
-            animator.SetBool("Jetpack", false);
-        }
-
-        //restas el time.delta time....
-        attackCooldown -= Time.deltaTime;
-
-        //...hasta que sea 0
-        if (attackCooldown <= 0)
-            canAttack = true;
-
-        //...ahí disparas::::::::::::::fijate que la currentAmmo sea mayor a 0
-        if (Input.GetButton("Fire1") && (canAttack) && currentAmmo > 0 && canShootNextBullet)
-        {
-            //Sound Settings
-            shotSound.gameObject.SetActive(true);
-
-            //llamo al metodo de disparar
-            Shoot();
-
-            //resto 1 a la munición
-            currentAmmo -= 1;
-
-            //AmmoAmount.ammoAmount -= 1;
-
-            //el cooldown timer y attackcooldown se reinician
-            cooldownTimer = attackCooldown;
-        }
-        else
-            shotSound.gameObject.SetActive(false);
-
 
 
         if (currentAmmo <= 0)
@@ -176,11 +180,15 @@ public class CharacterAttack : MonoBehaviour
 
         void Shoot()
         {
-            if (canShootNextBullet)
+            if (!CutsceneController.isCutsceneOn)
             {
-                canShootNextBullet = false;
-                Instantiate(bullet, firePoint.position, firePoint.rotation);
+                if (canShootNextBullet)
+                {
+                    canShootNextBullet = false;
+                    Instantiate(bullet, firePoint.position, firePoint.rotation);
+                }
             }
+            
         }
     }
 
@@ -199,10 +207,14 @@ public class CharacterAttack : MonoBehaviour
     
     private void UseJetPack()
     {
-        GameObject jetpack = Instantiate(jetPack, transform.position, Quaternion.identity);
-        Rigidbody2D rb2 = jetpack.GetComponent<Rigidbody2D>();
-        rb2.AddForce(transform.up * 10, ForceMode2D.Force);
-        jetpackSound.gameObject.SetActive(true);
+        if (!CutsceneController.isCutsceneOn)
+        {
+            GameObject jetpack = Instantiate(jetPack, transform.position, Quaternion.identity);
+            Rigidbody2D rb2 = jetpack.GetComponent<Rigidbody2D>();
+            rb2.AddForce(transform.up * 10, ForceMode2D.Force);
+            jetpackSound.gameObject.SetActive(true);
+        }
+        
     }
 
     private void OnCollisionStay2D(Collision2D collision)
