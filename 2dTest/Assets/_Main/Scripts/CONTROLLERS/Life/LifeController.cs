@@ -42,6 +42,7 @@ public class LifeController : MonoBehaviour
     [SerializeField]
     private GameObject monkeySound = null;
 
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -49,6 +50,7 @@ public class LifeController : MonoBehaviour
 
     void Start()
     {
+
         //currentTimeToHeal = 0.0f;
         //canTakeDamage = true;
 
@@ -63,8 +65,6 @@ public class LifeController : MonoBehaviour
         {
             HealthRecover();
         }
-            
-
 
         /*currentTimeToHeal += Time.deltaTime;
 
@@ -89,12 +89,29 @@ public class LifeController : MonoBehaviour
     }
     */
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<EnemyLifeController>() || gameObject.CompareTag("Enemy"))
+        {
+            monkeySound.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<EnemyLifeController>() || gameObject.CompareTag("Enemy"))
+        {
+            monkeySound.gameObject.SetActive(false);
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         currentLife -= damage;
 
         animator.SetTrigger("TakeDamage");
 
+        
         OnGetDamage.Invoke(currentLife, damage);
 
         OnLifeChange.Invoke(currentLife);
@@ -105,6 +122,7 @@ public class LifeController : MonoBehaviour
         }
     }
 
+    
     public void Die()
     {
         SceneManager.LoadScene(sceneName);
