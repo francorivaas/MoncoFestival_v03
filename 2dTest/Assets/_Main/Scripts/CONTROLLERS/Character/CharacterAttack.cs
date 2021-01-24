@@ -92,8 +92,6 @@ public class CharacterAttack : MonoBehaviour
         {
             AmmoAmount.ammoAmount = currentAmmo;
 
-            Debug.Log(currentAmmo);
-
             currentNextBullet += Time.deltaTime;
 
             if (currentNextBullet >= nextBullet)

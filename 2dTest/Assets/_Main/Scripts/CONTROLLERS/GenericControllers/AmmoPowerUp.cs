@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AmmoPowerUp : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject ammoPickUpSound = null;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -13,12 +16,14 @@ public class AmmoPowerUp : MonoBehaviour
             if (characterAttack != null && characterAttack.currentAmmo < characterAttack.maxAmmo)
             {
                 characterAttack.currentAmmo += 100;
-                Destroy(gameObject);
+
+                ammoPickUpSound.gameObject.SetActive(true);
+
+                Destroy(gameObject, 1f);
 
                 if (characterAttack.currentAmmo > characterAttack.maxAmmo)
                 {
                     characterAttack.currentAmmo = characterAttack.maxAmmo;
-                    Debug.Log("ya tenes la maxammo papi");
                 }
             }
         }
