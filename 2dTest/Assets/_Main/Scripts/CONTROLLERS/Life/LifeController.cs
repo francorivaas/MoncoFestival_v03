@@ -61,14 +61,15 @@ public class LifeController : MonoBehaviour
 
     private void Update()
     {
+        //Heal Settings
+
         if (currentLife < maxLife && enemyCounter.canRecover)
         {
+            enemyCounter.canRecover = false;
+
             Heal();
         }
-        else
-        {
-            enemyCounter.canRecover = false;
-        }
+            
 
         /*currentTimeToHeal += Time.deltaTime;
 
@@ -83,7 +84,7 @@ public class LifeController : MonoBehaviour
 
     public void Heal()
     {
-        enemyCounter.canRecover = false;
+        Debug.Log("cual acá");
 
         currentLife = maxLife;
     }
@@ -135,6 +136,7 @@ public class LifeController : MonoBehaviour
         currentLife += lifePlus;
     }
     */
+
     public float GetCurrentLife()
     {
         return currentLife;

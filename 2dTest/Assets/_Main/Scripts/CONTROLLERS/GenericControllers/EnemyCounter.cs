@@ -8,14 +8,7 @@ public class EnemyCounter : MonoBehaviour
 
     public static int enemiesKilled = 0;
 
-    [SerializeField]
-    private LifeController lifeController;
-
     public bool canRecover = false;
-
-    private void Awake()
-    {
-    }
 
     private void Start()
     {
@@ -24,13 +17,21 @@ public class EnemyCounter : MonoBehaviour
 
     private void Update()
     {
+
+        Debug.Log(enemiesKilled);
+
         if (enemiesKilled == 10)
         {
             canRecover = true;
+
+            enemiesKilled = 0;
         }
-        else
+            
+
+        else if (enemiesKilled < 10 || enemiesKilled > 10)
         {
             canRecover = false;
-        }  
+        }
+            
     }
 }
