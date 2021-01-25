@@ -10,28 +10,31 @@ public class EnemyCounter : MonoBehaviour
 
     public bool canRecover = false;
 
+    [SerializeField]
+    private GameObject healthPowerUpSound = null;
+
     private void Start()
     {
+        healthPowerUpSound.gameObject.SetActive(false);
         canRecover = false;
     }
 
     private void Update()
     {
-
-        Debug.Log(enemiesKilled);
-
         if (enemiesKilled == 10)
         {
+            healthPowerUpSound.gameObject.SetActive(true);
+            
             canRecover = true;
 
             enemiesKilled = 0;
         }
             
-
         else if (enemiesKilled < 10 || enemiesKilled > 10)
         {
+            healthPowerUpSound.gameObject.SetActive(false);
             canRecover = false;
         }
-            
+             
     }
 }

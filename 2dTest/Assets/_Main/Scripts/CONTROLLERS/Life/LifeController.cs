@@ -42,7 +42,6 @@ public class LifeController : MonoBehaviour
     [SerializeField]
     private GameObject monkeySound = null;
 
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -70,7 +69,6 @@ public class LifeController : MonoBehaviour
             Heal();
         }
             
-
         /*currentTimeToHeal += Time.deltaTime;
 
         if(currentTimeToHeal >= timeToHeal)

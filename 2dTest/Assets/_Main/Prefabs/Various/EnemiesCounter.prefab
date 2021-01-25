@@ -43,4 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2ff284eed596a46a2ffa5f29369a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: 0
+  canRecover: 0
+  healthPowerUpSound: {fileID: 0}
