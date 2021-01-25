@@ -63,7 +63,11 @@ public class LifeController : MonoBehaviour
     {
         if (currentLife < maxLife && enemyCounter.canRecover)
         {
-            HealthRecover();
+            Heal();
+        }
+        else
+        {
+            enemyCounter.canRecover = false;
         }
 
         /*currentTimeToHeal += Time.deltaTime;
@@ -76,18 +80,14 @@ public class LifeController : MonoBehaviour
         */
     }
 
-    /*
+
     public void Heal()
     {
-        canHeal = false;
+        enemyCounter.canRecover = false;
 
-        if(Input.GetKeyDown(KeyCode.H))
-        {
-            OnLifeChange.Invoke(currentLife);
-            currentTimeToHeal = 0.0f;
-        }
+        currentLife = maxLife;
     }
-    */
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -128,12 +128,13 @@ public class LifeController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    /*
     public void HealthRecover()
     {
         enemyCounter.canRecover = false;
         currentLife += lifePlus;
     }
-
+    */
     public float GetCurrentLife()
     {
         return currentLife;
