@@ -5,11 +5,13 @@ using UnityEngine;
 public class OnTriggerDestroy : MonoBehaviour
 {
     [SerializeField]
-    private GameObject gemPickUpSound = null;
+    private AudioClip gemPickUpSound = null;
 
-    private void Start()
+    private AudioSource audioSource;
+
+    private void Awake()
     {
-        gemPickUpSound.gameObject.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,20 +20,10 @@ public class OnTriggerDestroy : MonoBehaviour
         {
             GemsAmount.gemsAmount += 1;
 
-            gemPickUpSound.gameObject.SetActive(true);
+            audioSource.clip = gemPickUpSound;
+            audioSource.Play();
 
-            Destroy(gameObject);
-        }
-
-        else if (collision.CompareTag("Ground"))
-        {
-            gemPickUpSound.gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-
-        else
-        {
-            gemPickUpSound.gameObject.SetActive(false);
+            Destroy(gameObject, 0.5f);
         }
     }
 }
