@@ -228,6 +228,7 @@ public class CharacterAttack : MonoBehaviour
         {
             GameObject jetpack = Instantiate(jetPack, transform.position, Quaternion.identity);
             Rigidbody2D rb2 = jetpack.GetComponent<Rigidbody2D>();
+
             rb2.AddForce(transform.up * 10, ForceMode2D.Force);
 
             jetpackSound.gameObject.SetActive(true);
