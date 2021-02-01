@@ -3,16 +3,25 @@
 public class CharacterAttack : MonoBehaviour
 {
     [Header("Cooldown")]
+
     [SerializeField] private float attackCooldown = 2.0f;
     private float cooldownTimer = 0.0f;
 
+
+
     [Header("Ammo")]
+
     public int maxAmmo = 100;
     public int currentAmmo = 0;
 
+
+
     [Header("Prefabs")]
+
     public Transform firePoint;
     public GameObject bullet;
+
+
 
     [Header("GameObjects")]
 
@@ -25,13 +34,18 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField]
     private GameObject grenadePoint = null;
 
+
+
     [Header("Sounds")]
 
     [SerializeField]
-    private GameObject shotSound = null;
+    private AudioClip shotSound;
 
     [SerializeField]
-    private GameObject jetpackSound = null;
+    private GameObject jetpackSound;
+
+    private AudioSource audioSource;
+
     //RB
     private Rigidbody2D myRb;
 
@@ -57,6 +71,8 @@ public class CharacterAttack : MonoBehaviour
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+
         myRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -73,7 +89,6 @@ public class CharacterAttack : MonoBehaviour
     void Start()
     {
         jetpackSound.gameObject.SetActive(false);
-        shotSound.gameObject.SetActive(false);
 
         currentNextBullet = nextBullet;
 
@@ -116,11 +131,16 @@ public class CharacterAttack : MonoBehaviour
 
             if (Input.GetButtonUp("Fire2"))
             {
-                jetpackSound.gameObject.SetActive(false);
+                
 
                 canUseJetPack = false;
 
                 animator.SetBool("Jetpack", false);
+            }
+
+            else
+            {
+                jetpackSound.gameObject.SetActive(false);
             }
 
             //restas el time.delta time....
@@ -133,8 +153,9 @@ public class CharacterAttack : MonoBehaviour
             //...ahí disparas::::::::::::::fijate que la currentAmmo sea mayor a 0
             if (Input.GetButton("Fire1") && (canAttack) && currentAmmo > 0 && canShootNextBullet)
             {
-                //Sound Settings
-                shotSound.gameObject.SetActive(true);
+                audioSource.clip = shotSound;
+
+                audioSource.Play();
 
                 //llamo al metodo de disparar
                 Shoot();
@@ -147,10 +168,6 @@ public class CharacterAttack : MonoBehaviour
                 //el cooldown timer y attackcooldown se reinician
                 cooldownTimer = attackCooldown;
             }
-            else
-                shotSound.gameObject.SetActive(false);
-
-
         }
 
 
@@ -201,6 +218,8 @@ public class CharacterAttack : MonoBehaviour
         GameObject grenade = Instantiate(grenadePrefab, grenadePoint.transform.position, Quaternion.identity);
         Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * grenadeSpeed, ForceMode2D.Impulse);
+
+
     }
     
     private void UseJetPack()
@@ -210,6 +229,7 @@ public class CharacterAttack : MonoBehaviour
             GameObject jetpack = Instantiate(jetPack, transform.position, Quaternion.identity);
             Rigidbody2D rb2 = jetpack.GetComponent<Rigidbody2D>();
             rb2.AddForce(transform.up * 10, ForceMode2D.Force);
+
             jetpackSound.gameObject.SetActive(true);
         }
         
