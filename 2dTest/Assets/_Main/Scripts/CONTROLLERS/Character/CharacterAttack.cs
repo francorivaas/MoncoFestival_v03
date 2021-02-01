@@ -133,16 +133,10 @@ public class CharacterAttack : MonoBehaviour
 
             if (Input.GetButtonUp("Fire2"))
             {
-                
-
+                jetpackSound.gameObject.SetActive(false);
                 canUseJetPack = false;
 
                 animator.SetBool("Jetpack", false);
-            }
-
-            else
-            {
-                //jetpackSound.gameObject.SetActive(false);
             }
 
             //restas el time.delta time....
