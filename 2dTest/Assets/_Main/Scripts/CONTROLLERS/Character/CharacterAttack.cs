@@ -124,6 +124,8 @@ public class CharacterAttack : MonoBehaviour
 
             if (Input.GetButton("Fire2"))
             {
+                jetpackSound.gameObject.SetActive(true);
+
                 canUseJetPack = true;
 
                 animator.SetBool("Jetpack", true);
@@ -140,7 +142,7 @@ public class CharacterAttack : MonoBehaviour
 
             else
             {
-                jetpackSound.gameObject.SetActive(false);
+                //jetpackSound.gameObject.SetActive(false);
             }
 
             //restas el time.delta time....
@@ -230,8 +232,6 @@ public class CharacterAttack : MonoBehaviour
             Rigidbody2D rb2 = jetpack.GetComponent<Rigidbody2D>();
 
             rb2.AddForce(transform.up * 10, ForceMode2D.Force);
-
-            jetpackSound.gameObject.SetActive(true);
         }
         
     }
