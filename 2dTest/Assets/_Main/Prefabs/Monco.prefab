@@ -243,7 +243,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568b4c819c45be248b30c84600bb7efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  step_1: {fileID: 8300000, guid: 983513e6ca790fd42a1f19d95b6b837e, type: 3}
+  step_2: {fileID: 8300000, guid: a117b53cc1bd72743ad22babd6568d20, type: 3}
+  step_3: {fileID: 8300000, guid: 9de8f2264a443024ba6378b7af0c0a2d, type: 3}
+  maxTimeToPlaySteps: 0.3
   speed: 5
+  isGrounded: 0
   firePoint: {fileID: 2646209428939415080}
 --- !u!114 &1556743635372479546
 MonoBehaviour:
@@ -421,7 +426,8 @@ AudioSource:
   m_GameObject: {fileID: 8470541175549660250}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 702818061664014685, guid: da7d21b2dd8bded4c8290c681f879f99,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
