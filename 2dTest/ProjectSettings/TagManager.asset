@@ -24,7 +24,7 @@ TagManager:
   - Jetpack
   - Gounds
   - COLLIDERS
-  - 
+  - Trees
   - 
   - 
   - 
@@ -48,6 +48,15 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1451217441
+    locked: 0
+  - name: Bush
+    uniqueID: 1805957619
+    locked: 0
+  - name: SecondTrees
+    uniqueID: 1405923615
+    locked: 0
+  - name: Trees
+    uniqueID: 222259083
     locked: 0
   - name: Ground
     uniqueID: 932122407
