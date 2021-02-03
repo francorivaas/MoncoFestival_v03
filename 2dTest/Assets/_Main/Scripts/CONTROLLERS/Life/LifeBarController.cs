@@ -21,7 +21,7 @@ public class LifeBarController : MonoBehaviour
         UpdateLifebar();
     }
 
-    void UpdateLifebar()
+    public void UpdateLifebar()
     {
         lifebar.fillAmount = lifeController.GetLifePercentage();
     }

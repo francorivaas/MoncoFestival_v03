@@ -25,7 +25,7 @@ public class EnemyLifeController : MonoBehaviour
         if (currentLife <= 0)
         {
             EnemyCounter.enemiesKilled++;
-
+            Debug.Log("esto pasa entre el contador y la muerte de este padre");
             Destroy(gameObject);
         }
     }

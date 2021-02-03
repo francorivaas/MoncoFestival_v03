@@ -42,6 +42,9 @@ public class LifeController : MonoBehaviour
     [SerializeField]
     private GameObject monkeySound = null;
 
+    [SerializeField]
+    private LifeBarController lifeBarController;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -60,6 +63,8 @@ public class LifeController : MonoBehaviour
 
     private void Update()
     {
+        
+
         //Heal Settings
 
         if (currentLife < maxLife && enemyCounter.canRecover)
@@ -83,6 +88,8 @@ public class LifeController : MonoBehaviour
     public void Heal()
     {
         Debug.Log("cual acá");
+
+        lifeBarController.UpdateLifebar();
 
         currentLife = maxLife;
     }
@@ -110,7 +117,6 @@ public class LifeController : MonoBehaviour
 
         animator.SetTrigger("TakeDamage");
 
-        
         OnGetDamage.Invoke(currentLife, damage);
 
         OnLifeChange.Invoke(currentLife);

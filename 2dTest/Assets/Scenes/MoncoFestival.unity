@@ -2639,6 +2639,7 @@ MonoBehaviour:
   sceneName: 
   enemyCounter: {fileID: 0}
   monkeySound: {fileID: 0}
+  lifeBarController: {fileID: 0}
 --- !u!4 &498458386 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6171471835405870492, guid: c0146e50e804fa84c8f553331280ddba,
@@ -10875,7 +10876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.010474736, y: 0.030825939}
   m_AnchorMax: {x: 0.16452529, y: 0.030825939}
-  m_AnchoredPosition: {x: 30.799927, y: -1}
+  m_AnchoredPosition: {x: 30.799805, y: -1}
   m_SizeDelta: {x: -31, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!4 &1781915249 stripped
@@ -13280,32 +13281,32 @@ PrefabInstance:
     - target: {fileID: 6521845766844964608, guid: cef545e6b57ca5440b38892d64d83e1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9130578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521845766844964608, guid: cef545e6b57ca5440b38892d64d83e1a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.031832
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521845766844964608, guid: cef545e6b57ca5440b38892d64d83e1a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3798828
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521845766844964608, guid: cef545e6b57ca5440b38892d64d83e1a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521845766844964608, guid: cef545e6b57ca5440b38892d64d83e1a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521845766844964608, guid: cef545e6b57ca5440b38892d64d83e1a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521845766844964608, guid: cef545e6b57ca5440b38892d64d83e1a,
         type: 3}
@@ -13339,9 +13340,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521845766844964615, guid: cef545e6b57ca5440b38892d64d83e1a,
         type: 3}
-      propertyPath: healthPowerUpSound
+      propertyPath: lifeBarController
       value: 
-      objectReference: {fileID: 1085118106}
+      objectReference: {fileID: 122006837}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cef545e6b57ca5440b38892d64d83e1a, type: 3}
 --- !u!4 &6521845767286853685 stripped

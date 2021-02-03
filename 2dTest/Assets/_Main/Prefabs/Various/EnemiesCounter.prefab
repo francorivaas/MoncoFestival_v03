@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canRecover: 0
-  healthPowerUpSound: {fileID: 0}
+  lifeBarController: {fileID: 0}
