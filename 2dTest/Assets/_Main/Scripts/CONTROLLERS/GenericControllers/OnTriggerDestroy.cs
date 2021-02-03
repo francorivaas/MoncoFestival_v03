@@ -8,22 +8,31 @@ public class OnTriggerDestroy : MonoBehaviour
     private AudioClip gemPickUpSound = null;
 
     private AudioSource audioSource;
+    private SpriteRenderer sprite;
+    private Collider2D col;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        sprite = GetComponent<SpriteRenderer>();
+        col = GetComponent<Collider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            GemsAmount.gemsAmount += 1;
+            if (col != null && sprite != null)
+            {
+                col.enabled = false;
+                sprite.enabled = false;
 
-            audioSource.clip = gemPickUpSound;
-            audioSource.Play();
+                audioSource.clip = gemPickUpSound;
+                audioSource.Play();
 
-            Destroy(gameObject, 0.5f);
+                GemsAmount.gemsAmount++;
+            }
+            
         }
     }
 }
