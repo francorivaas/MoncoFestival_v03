@@ -42,8 +42,14 @@ public class LifeController : MonoBehaviour
     [SerializeField]
     private GameObject monkeySound = null;
 
+    [SerializeField]
+    private AudioClip healthPowerUp;
+
+    private AudioSource audioSource;
+
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
         currentLife = maxLife;
@@ -77,14 +83,17 @@ public class LifeController : MonoBehaviour
         */
     }
 
-
     public void Heal()
     {
         currentLife = maxLife;
         OnLifeChange.Invoke(currentLife);
+
+        audioSource.clip = healthPowerUp;
+        audioSource.Play();
+
+        Debug.Log("porque no hay sonedeetoo");
     }
     
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<EnemyLifeController>() || gameObject.CompareTag("Enemy"))

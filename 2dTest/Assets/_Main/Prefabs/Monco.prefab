@@ -331,6 +331,7 @@ MonoBehaviour:
   sceneName: MainMenu
   enemyCounter: {fileID: 0}
   monkeySound: {fileID: 2388229740184702911}
+  healthPowerUp: {fileID: 8300000, guid: 3eccb9386fdcf84419588918f9e28b4e, type: 3}
 --- !u!114 &8470541175549660245
 MonoBehaviour:
   m_ObjectHideFlags: 0
