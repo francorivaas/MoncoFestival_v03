@@ -42,29 +42,22 @@ public class LifeController : MonoBehaviour
     [SerializeField]
     private GameObject monkeySound = null;
 
-    [SerializeField]
-    private LifeBarController lifeBarController;
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
+
+        currentLife = maxLife;
     }
 
     void Start()
     {
-
         //currentTimeToHeal = 0.0f;
         //canTakeDamage = true;
-
-        currentLife = maxLife;
-
         monkeySound.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        
-
         //Heal Settings
 
         if (currentLife < maxLife && enemyCounter.canRecover)
@@ -87,11 +80,8 @@ public class LifeController : MonoBehaviour
 
     public void Heal()
     {
-        Debug.Log("cual acá");
-
-        lifeBarController.UpdateLifebar();
-
         currentLife = maxLife;
+        OnLifeChange.Invoke(currentLife);
     }
     
 

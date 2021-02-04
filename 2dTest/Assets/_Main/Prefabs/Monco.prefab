@@ -376,6 +376,7 @@ MonoBehaviour:
   jetpackSound: {fileID: 0}
   maxGrenades: 5
   currentGrenades: 0
+  lifeControl: {fileID: 4345438977906629851}
 --- !u!61 &8470541175549660244
 BoxCollider2D:
   m_ObjectHideFlags: 0

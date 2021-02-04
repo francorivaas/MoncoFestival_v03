@@ -2639,7 +2639,6 @@ MonoBehaviour:
   sceneName: 
   enemyCounter: {fileID: 0}
   monkeySound: {fileID: 0}
-  lifeBarController: {fileID: 0}
 --- !u!4 &498458386 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6171471835405870492, guid: c0146e50e804fa84c8f553331280ddba,

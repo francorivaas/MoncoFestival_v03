@@ -69,6 +69,8 @@ public class CharacterAttack : MonoBehaviour
     private float nextBullet = 0.1f;
     private float currentNextBullet = 0.0f;
 
+    [SerializeField] private LifeController lifeControl;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -108,6 +110,16 @@ public class CharacterAttack : MonoBehaviour
             AmmoAmount.ammoAmount = currentAmmo;
 
             currentNextBullet += Time.deltaTime;
+
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                lifeControl.TakeDamage(10);   
+            }
+
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                lifeControl.Heal();
+            }
 
             if (currentNextBullet >= nextBullet)
             {
