@@ -22,17 +22,18 @@ public class OnTriggerDestroy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (col != null && sprite != null)
-            {
-                col.enabled = false;
-                sprite.enabled = false;
+            col.enabled = false;
+            sprite.enabled = false;
 
-                audioSource.clip = gemPickUpSound;
-                audioSource.Play();
+            audioSource.clip = gemPickUpSound;
+            audioSource.Play();
 
-                GemsAmount.gemsAmount++;
-            }
-            
+            Add();
         }
+    }
+
+    private void Add()
+    {
+        GemsAmount.gemsAmount += 1;
     }
 }

@@ -129,6 +129,8 @@ public class LifeController : MonoBehaviour
     
     public void Die()
     {
+        GemsAmount.gemsAmount = 0;
+
         SceneManager.LoadScene(sceneName);
     }
 
