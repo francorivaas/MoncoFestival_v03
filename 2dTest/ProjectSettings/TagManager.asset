@@ -64,6 +64,9 @@ TagManager:
   - name: Characters
     uniqueID: 2624233277
     locked: 0
+  - name: Enemies
+    uniqueID: 3310106117
+    locked: 0
   - name: AirElements
     uniqueID: 655347867
     locked: 0
