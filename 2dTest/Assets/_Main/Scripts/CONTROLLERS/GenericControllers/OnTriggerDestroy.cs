@@ -15,10 +15,27 @@ public class OnTriggerDestroy : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         sprite = GetComponent<SpriteRenderer>();
-        col = GetComponent<Collider2D>();
+        col = GetComponent<BoxCollider2D>();
     }
 
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //Destroy(col);
+            col.enabled = false;
+            sprite.enabled = false;
+
+            audioSource.clip = gemPickUpSound;
+            audioSource.Play();
+
+            Add();
+        }
+    }
+    */
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -31,7 +48,6 @@ public class OnTriggerDestroy : MonoBehaviour
             Add();
         }
     }
-
     private void Add()
     {
         GemsAmount.gemsAmount += 1;
