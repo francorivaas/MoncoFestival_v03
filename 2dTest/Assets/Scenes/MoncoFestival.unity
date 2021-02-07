@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: 122006836}
   - component: {fileID: 122006835}
   - component: {fileID: 122006837}
+  - component: {fileID: 122006838}
   m_Layer: 5
   m_Name: Lifebar Slider
   m_TagString: Untagged
@@ -628,6 +629,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeController: {fileID: 1434778486}
   lifebar: {fileID: 122006835}
+--- !u!95 &122006838
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122006833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4756927b43b7384abeff96ae68b8bb4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &123616628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,6 +2765,7 @@ MonoBehaviour:
   enemyCounter: {fileID: 0}
   monkeySound: {fileID: 0}
   healthPowerUp: {fileID: 0}
+  animator_Lifebar: {fileID: 0}
 --- !u!4 &498458386 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6171471835405870492, guid: c0146e50e804fa84c8f553331280ddba,
@@ -13798,6 +13819,11 @@ PrefabInstance:
       propertyPath: enemyCounter
       value: 
       objectReference: {fileID: 618551834}
+    - target: {fileID: 4345438977906629851, guid: 09698a95e3c8f6c479e99c3503845398,
+        type: 3}
+      propertyPath: animator_Lifebar
+      value: 
+      objectReference: {fileID: 122006838}
     - target: {fileID: 8470541175549660246, guid: 09698a95e3c8f6c479e99c3503845398,
         type: 3}
       propertyPath: m_LocalPosition.x

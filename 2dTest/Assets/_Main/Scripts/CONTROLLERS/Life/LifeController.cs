@@ -47,6 +47,9 @@ public class LifeController : MonoBehaviour
 
     private AudioSource audioSource;
 
+    [SerializeField]
+    private Animator animator_Lifebar;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -92,6 +95,8 @@ public class LifeController : MonoBehaviour
         audioSource.Play();
 
         Debug.Log("porque no hay sonedeetoo");
+
+        animator_Lifebar.SetTrigger("LifebarFulll");
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
