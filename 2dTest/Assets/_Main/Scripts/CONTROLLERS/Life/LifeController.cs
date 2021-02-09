@@ -40,15 +40,16 @@ public class LifeController : MonoBehaviour
     private Animator animator = null;
 
     [SerializeField]
-    private GameObject monkeySound = null;
-
-    [SerializeField]
     private AudioClip healthPowerUp;
 
     private AudioSource audioSource;
 
     [SerializeField]
     private Animator animator_Lifebar;
+
+    [SerializeField]
+    private AudioClip monkeySound;
+
 
     private void Awake()
     {
@@ -62,7 +63,6 @@ public class LifeController : MonoBehaviour
     {
         //currentTimeToHeal = 0.0f;
         //canTakeDamage = true;
-        monkeySound.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -98,26 +98,14 @@ public class LifeController : MonoBehaviour
 
         animator_Lifebar.SetTrigger("LifebarFulll");
     }
-    
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.GetComponent<EnemyLifeController>() || gameObject.CompareTag("Enemy"))
-        {
-            monkeySound.gameObject.SetActive(true);
-        }
-    }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.GetComponent<EnemyLifeController>() || gameObject.CompareTag("Enemy"))
-        {
-            monkeySound.gameObject.SetActive(false);
-        }
-    }
 
     public void TakeDamage(float damage)
     {
         currentLife -= damage;
+
+        audioSource.clip = monkeySound;
+        audioSource.Play();
 
         animator.SetTrigger("TakeDamage");
 
