@@ -42,6 +42,12 @@ public class MenuManager : MonoBehaviour
 
     bool canCount;
 
+    [SerializeField]
+    private Animator animator;
+
+    float timeToAnim = 1.0f;
+    float currentTimeToAnim = 0.0f;
+
     private void Awake()
     {
         buttonHelp.onClick.AddListener(OnClickHelpHandler);
@@ -99,9 +105,15 @@ public class MenuManager : MonoBehaviour
 
             if (currentTimeToPlay >= timeToPlay)
             {
-                SceneManager.LoadScene(gameSceneName);
-            }
-                
+                animator.SetTrigger("Start");
+
+                currentTimeToAnim += Time.deltaTime;
+
+                if (currentTimeToAnim >= timeToAnim)
+                {
+                    SceneManager.LoadScene(gameSceneName);
+                }
+            } 
         }
     }
 }
