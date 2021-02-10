@@ -42,14 +42,23 @@ public class MenuManager : MonoBehaviour
 
     bool canCount;
 
+    [Header("Components")]
+
     [SerializeField]
     private Animator animator;
+
+    [SerializeField]
+    private AudioClip buttonPressed;
+
+    private AudioSource audioSource;
 
     float timeToAnim = 1.0f;
     float currentTimeToAnim = 0.0f;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+
         buttonHelp.onClick.AddListener(OnClickHelpHandler);
         buttonPlay.onClick.AddListener(OnClickHandler);
         buttonExit.onClick.AddListener(OnExitClickHandler);
@@ -64,6 +73,9 @@ public class MenuManager : MonoBehaviour
 
     void OnClickHandler()
     {
+        audioSource.clip = buttonPressed;
+        audioSource.Play();
+
         canCount = true;
         helpMenu.gameObject.SetActive(false);
         title.text = "GO!";
@@ -71,6 +83,9 @@ public class MenuManager : MonoBehaviour
 
     void OnGoBackHandler()
     {
+        audioSource.clip = buttonPressed;
+        audioSource.Play();
+
         //BOTONES
         helpMenu.gameObject.SetActive(false);
         buttonExit.gameObject.SetActive(true);
@@ -82,6 +97,9 @@ public class MenuManager : MonoBehaviour
 
     void OnClickHelpHandler()
     {
+        audioSource.clip = buttonPressed;
+        audioSource.Play();
+
         //BOTONES
         helpMenu.gameObject.SetActive(true);
         buttonExit.gameObject.SetActive(false);
@@ -93,6 +111,9 @@ public class MenuManager : MonoBehaviour
 
     void OnExitClickHandler()
     {
+        audioSource.clip = buttonPressed;
+        audioSource.Play();
+
         Application.Quit();
         Debug.Log("mal de app");
     }
