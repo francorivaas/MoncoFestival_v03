@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 609, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 1111
+  controlID: 4829
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 101, y: 242}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 1112
+  controlID: 4830
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 1065
+  controlID: 4784
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -425,16 +425,16 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: de8b64ac85121524eb9b278b6caec07e
   m_Gizmos: 1
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1389.9293, y: 925.9424, z: -1666.8478}
+    m_Target: {x: -6.0722055, y: 5.5761175, z: -0.7548828}
     speed: 2
-    m_Value: {x: -1389.9293, y: 925.9424, z: -1666.8478}
+    m_Value: {x: -6.0722055, y: 5.5761175, z: -0.7548828}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 0
-    showSkybox: 1
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -484,9 +484,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2201.2288
+    m_Target: 0.7955249
     speed: 2
-    m_Value: 2201.2288
+    m_Value: 0.7955249
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -861,13 +861,13 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 503
+    y: 476
     width: 837
-    height: 466
+    height: 493
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 17170
+  m_LastSelectedObjectID: 27882
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -897,9 +897,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 8e470000
       m_LastClickedID: 0
-      m_ExpandedIDs: 4efbffff
+      m_ExpandedIDs: f66effff0c720000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -962,20 +962,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Main/Sounds
+    - Assets/_Main/Sprites/Various
   m_ViewMode: 1
   m_StartGridSize: 50
   m_LastFolders:
-  - Assets/_Main/Sounds
+  - Assets/_Main/Sprites/Various
   m_LastFoldersGridSize: 50
   m_LastProjectPath: C:\Users\franc\Documents\GitHub\MoncoFestival_v03\2dTest
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 139}
-    m_SelectedIDs: e4460000
-    m_LastClickedID: 18148
-    m_ExpandedIDs: 000000005e410000c8460000ca460000cc460000ce460000d0460000d2460000d4460000d6460000d8460000da460000dc460000de460000e0460000e2460000e4460000e6460000
+    scrollPos: {x: 0, y: 507}
+    m_SelectedIDs: 8e470000
+    m_LastClickedID: 18318
+    m_ExpandedIDs: 000000004e410000ce460000d0460000d2460000d4460000d6460000d8460000da460000dc460000de460000e0460000e2460000e4460000e6460000e8460000ea460000ec460000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c8460000ca460000cc460000ce460000d0460000d2460000d4460000d6460000d8460000da460000dc460000de460000e0460000e2460000e4460000e6460000
+    m_ExpandedIDs: 00000000ce460000d0460000d2460000d4460000d6460000d8460000da460000dc460000de460000e0460000e2460000e4460000e6460000e8460000ea460000ec460000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization:
   - {fileID: 0}
-  m_InstanceIDsLockedBeforeSerialization: 12430000
+  m_InstanceIDsLockedBeforeSerialization: 0c720000
   m_LockTracker:
     m_IsLocked: 1
   m_PreviewResizer:
