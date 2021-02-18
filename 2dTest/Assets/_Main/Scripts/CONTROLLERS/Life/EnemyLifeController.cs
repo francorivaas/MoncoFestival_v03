@@ -24,7 +24,9 @@ public class EnemyLifeController : MonoBehaviour
 
         if (currentLife <= 0)
         {
+            UIenemiesCounter.points++;
             EnemyCounter.enemiesKilled++;
+
             Destroy(gameObject);
         }
     }
