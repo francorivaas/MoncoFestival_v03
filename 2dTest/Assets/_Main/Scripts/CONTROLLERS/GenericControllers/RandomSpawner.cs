@@ -9,6 +9,8 @@ public class RandomSpawner : MonoBehaviour
 
     [SerializeField]
     private float spawnRate = 2.0f;
+
+    [SerializeField]
     private float nextSpawn = 0.0f;
 
     private float randomX;

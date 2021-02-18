@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 8699330630872038974}
   - component: {fileID: 8699330630872038969}
   - component: {fileID: 8699330630872038968}
+  - component: {fileID: 8728681615084829828}
   m_Layer: 12
   m_Name: AmmoPowerUp
   m_TagString: Untagged
@@ -227,7 +228,7 @@ Transform:
   m_GameObject: {fileID: 8699330630872038971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.18, y: 5.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 7676428401941956374}
   - {fileID: 2647463640445533455}
@@ -323,3 +324,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoPickUpSound: {fileID: 4059550765766012267}
+--- !u!95 &8728681615084829828
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8699330630872038971}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 767b0bcac751ea94197287b409bd6b41, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
