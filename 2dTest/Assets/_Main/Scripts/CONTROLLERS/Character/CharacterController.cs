@@ -4,20 +4,30 @@ using UnityEngine.Animations;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] private AudioClip step_1;
-    [SerializeField] private AudioClip step_2;
-    [SerializeField] private AudioClip step_3;
+    [SerializeField] 
+    private AudioClip step_1;
+
+    [SerializeField] 
+    private AudioClip step_2;
+
+    [SerializeField] 
+    private AudioClip step_3;
 
     private AudioSource audioSrc;
 
-    [SerializeField] private float currentTimeToPlaySteps = 0.0f;
-    [SerializeField] private float maxTimeToPlaySteps = 0.0f;
+    [SerializeField] 
+    private float currentTimeToPlaySteps = 0.0f;
+
+    [SerializeField] 
+    private float maxTimeToPlaySteps = 0.0f;
 
     public float speed = 5f;
 
-    [SerializeField] private bool isGrounded;
+    [SerializeField] 
+    private bool isGrounded;
 
-    [SerializeField] private Transform firePoint;
+    [SerializeField] 
+    private Transform firePoint;
 
     /*[SerializeField] private float timeToHeal = 10.0f;
     private float currentTimeToHeal;
@@ -58,7 +68,7 @@ public class CharacterController : MonoBehaviour
         
         //var direction = vector.zero
 
-        if (!CutsceneController.isCutsceneOn)
+        if (!CutsceneController.isCutsceneOn && !lifeController.isDying) 
         {
             if (Input.GetKey(KeyCode.A))
             {

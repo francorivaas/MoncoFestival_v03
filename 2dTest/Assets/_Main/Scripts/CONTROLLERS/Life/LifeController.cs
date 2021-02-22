@@ -16,6 +16,13 @@ public class LifeController : MonoBehaviour
 
     public UnityEvent OnDeath = new UnityEvent();
 
+    //DieEvent and Animation
+    [SerializeField]
+    private float timeToDie = 1.5f;
+    private float currentTimeToDie = 0.0f;
+
+    public bool isDying = false;
+
     /*
     [SerializeField] 
     private float currentTimeToHeal;
@@ -63,6 +70,7 @@ public class LifeController : MonoBehaviour
     {
         //currentTimeToHeal = 0.0f;
         //canTakeDamage = true;
+        isDying = false;
     }
 
     private void Update()
@@ -102,16 +110,19 @@ public class LifeController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentLife -= damage;
+        if (!isDying)
+        {
+            currentLife -= damage;
 
-        audioSource.clip = monkeySound;
-        audioSource.Play();
+            audioSource.clip = monkeySound;
+            audioSource.Play();
 
-        animator.SetTrigger("TakeDamage");
+            animator.SetTrigger("TakeDamage");
 
-        OnGetDamage.Invoke(currentLife, damage);
+            OnGetDamage.Invoke(currentLife, damage);
 
-        OnLifeChange.Invoke(currentLife);
+            OnLifeChange.Invoke(currentLife); 
+        }
 
         if (currentLife <= 0)
         {
@@ -122,9 +133,20 @@ public class LifeController : MonoBehaviour
     
     public void Die()
     {
-        GemsAmount.gemsAmount = 0;
+        currentTimeToDie += Time.deltaTime;
 
-        SceneManager.LoadScene(sceneName);
+        isDying = true;
+
+        Debug.Log(currentTimeToDie);
+
+        if (currentTimeToDie >= timeToDie)
+        {
+            isDying = false;
+
+            GemsAmount.gemsAmount = 0;
+
+            SceneManager.LoadScene(sceneName);
+        }
     }
 
     /*

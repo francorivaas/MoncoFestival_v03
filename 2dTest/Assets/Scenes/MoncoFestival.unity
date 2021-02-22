@@ -287,7 +287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.0871, y: 7.3001}
+  m_AnchoredPosition: {x: 13.4, y: 7.3}
   m_SizeDelta: {x: 63.17917, y: 55.666817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22879502
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31564525, g: 0.5943396, b: 0.053266272, a: 0.50980395}
+  m_Color: {r: 0.7802942, g: 0.9245283, b: 0.17007834, a: 0.50980395}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -664,7 +664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.45, y: 23.533}
+  m_AnchoredPosition: {x: 40.45, y: 6.6}
   m_SizeDelta: {x: 48.914505, y: 66.5155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &113903668
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: -5, y: 5}
   m_UseGraphicAlpha: 1
 --- !u!114 &113903669
 MonoBehaviour:
@@ -3015,6 +3015,8 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  timeToDie: 1.5
+  isDying: 0
   sceneName: 
   enemyCounter: {fileID: 0}
   healthPowerUp: {fileID: 0}
@@ -13081,7 +13083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: -5, y: 5}
   m_UseGraphicAlpha: 1
 --- !u!1 &2009459438
 GameObject:

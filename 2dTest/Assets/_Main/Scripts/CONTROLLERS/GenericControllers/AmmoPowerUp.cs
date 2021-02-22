@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class AmmoPowerUp : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip ammoPickUp = null;
+
+    private AudioSource audioSrc;
+
+    private void Awake()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +22,8 @@ public class AmmoPowerUp : MonoBehaviour
 
             if (characterAttack != null && characterAttack.currentAmmo < characterAttack.maxAmmo)
             {
+                PlaySound();
+
                 characterAttack.currentAmmo += 100;
 
                 Destroy(gameObject);
@@ -23,5 +34,11 @@ public class AmmoPowerUp : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void PlaySound()
+    {
+        audioSrc.clip = ammoPickUp;
+        audioSrc.Play();
     }
 }
