@@ -200,7 +200,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  timeToDie: 1
+  timeToDie: 0.3
   isDying: 0
   sceneName: MainMenu
   enemyCounter: {fileID: 0}

@@ -125,8 +125,6 @@ public class LifeController : MonoBehaviour
 
         if (currentLife <= 0)
         {
-            
-
             Die();
         }
     }
@@ -139,9 +137,13 @@ public class LifeController : MonoBehaviour
         isDying = true;
 
         currentTimeToDie += Time.deltaTime;
+        
+        Debug.Log(currentTimeToDie);
 
         if (currentTimeToDie >= timeToDie)
         {
+
+
             isDying = false;
 
             GemsAmount.gemsAmount = 0;
