@@ -125,6 +125,8 @@ public class LifeController : MonoBehaviour
 
         if (currentLife <= 0)
         {
+            
+
             Die();
         }
     }
@@ -132,6 +134,8 @@ public class LifeController : MonoBehaviour
     
     public void Die()
     {
+        animator.SetTrigger("IsDead");
+
         isDying = true;
 
         currentTimeToDie += Time.deltaTime;

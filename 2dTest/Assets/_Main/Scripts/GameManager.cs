@@ -5,39 +5,44 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    /*
     [SerializeField] private float timeToLose = 30.0f;
     private float currentGameTime;
+    */
 
     private CharacterController character;
     
-    private bool itsOverPal;
+    
 
     private void Update()
     {
-        currentGameTime += Time.deltaTime;
+        //currentGameTime += Time.deltaTime;
 
+        /*
         if (currentGameTime >= timeToLose && !itsOverPal)
         {
             GameOver();
         }
+        
 
-        /*if (!character.isAlive())
+        if (!character.isAlive())
         {
             GameOver();
         }
         */
+
     }
 
     public void GameOver()
     {
-        itsOverPal = true;
+        //itsOverPal = true;
         
         Debug.Log("perdi");
     }
 
     public void Victory()
     {
-        itsOverPal = false;
+        //itsOverPal = false;
         Debug.Log("gane");
     }
 }

@@ -13114,7 +13114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8090a8feca8ae4049a2486c07391b865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLose: 100.57
 --- !u!4 &2009459440
 Transform:
   m_ObjectHideFlags: 0
@@ -14464,6 +14463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Monco
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470541175549660251, guid: 09698a95e3c8f6c479e99c3503845398,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09698a95e3c8f6c479e99c3503845398, type: 3}
