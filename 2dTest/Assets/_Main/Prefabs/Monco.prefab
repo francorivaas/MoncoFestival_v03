@@ -200,6 +200,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  timeToDie: 1
+  isDying: 0
   sceneName: MainMenu
   enemyCounter: {fileID: 0}
   healthPowerUp: {fileID: 8300000, guid: 3eccb9386fdcf84419588918f9e28b4e, type: 3}

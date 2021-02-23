@@ -18,7 +18,7 @@ public class LifeController : MonoBehaviour
 
     //DieEvent and Animation
     [SerializeField]
-    private float timeToDie = 1.5f;
+    private float timeToDie = 1.0f;
     private float currentTimeToDie = 0.0f;
 
     public bool isDying = false;
@@ -56,7 +56,6 @@ public class LifeController : MonoBehaviour
 
     [SerializeField]
     private AudioClip monkeySound;
-
 
     private void Awake()
     {
@@ -133,11 +132,9 @@ public class LifeController : MonoBehaviour
     
     public void Die()
     {
-        currentTimeToDie += Time.deltaTime;
-
         isDying = true;
 
-        Debug.Log(currentTimeToDie);
+        currentTimeToDie += Time.deltaTime;
 
         if (currentTimeToDie >= timeToDie)
         {
@@ -147,6 +144,12 @@ public class LifeController : MonoBehaviour
 
             SceneManager.LoadScene(sceneName);
         }
+    }
+
+    /*
+    private void PlayAnimation()
+    {
+        animator.SetBool("IsDead", true);
     }
 
     /*
