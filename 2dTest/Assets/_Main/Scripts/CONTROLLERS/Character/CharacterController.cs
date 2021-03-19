@@ -97,8 +97,6 @@ public class CharacterController : MonoBehaviour
                 {
                     PlayStepSound();
                 }
-
-
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 

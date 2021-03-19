@@ -56,7 +56,6 @@ public class CharacterAttack : MonoBehaviour
     //BOOLEANS
     private bool canUseGrenade;
     private bool canUseJetPack;
-    private bool canAttack = true;
     private bool isGrounded;
 
     private bool hasGrenade;
@@ -110,6 +109,11 @@ public class CharacterAttack : MonoBehaviour
             AmmoAmount.ammoAmount = currentAmmo;
 
             currentNextBullet += Time.deltaTime;
+            if (currentNextBullet >= nextBullet)
+            {
+                canShootNextBullet = true;
+                currentNextBullet = 0.0f;
+            }
 
             if (Input.GetKeyDown(KeyCode.H))
             {
@@ -121,11 +125,7 @@ public class CharacterAttack : MonoBehaviour
                 lifeControl.Heal();
             }
 
-            if (currentNextBullet >= nextBullet)
-            {
-                canShootNextBullet = true;
-                currentNextBullet = 0.0f;
-            }
+            
 
 
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -155,11 +155,9 @@ public class CharacterAttack : MonoBehaviour
             attackCooldown -= Time.deltaTime;
 
             //...hasta que sea 0
-            if (attackCooldown <= 0)
-                canAttack = true;
 
             //...ahí disparas::::::::::::::fijate que la currentAmmo sea mayor a 0
-            if (Input.GetButton("Fire1") && (canAttack) && currentAmmo > 0 && canShootNextBullet)
+            if (Input.GetButton("Fire1") && currentAmmo > 0 && canShootNextBullet)
             {
                 audioSource.clip = shotSound;
 
@@ -170,17 +168,8 @@ public class CharacterAttack : MonoBehaviour
 
                 //resto 1 a la munición
                 currentAmmo -= 1;
-
-                //AmmoAmount.ammoAmount -= 1;
-
-                //el cooldown timer y attackcooldown se reinician
-                cooldownTimer = attackCooldown;
             }
         }
-
-
-        if (currentAmmo <= 0)
-            canAttack = false;
 
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo <= 0)
         {
@@ -210,8 +199,7 @@ public class CharacterAttack : MonoBehaviour
                     canShootNextBullet = false;
                     Instantiate(bullet, firePoint.position, firePoint.rotation);
                 }
-            }
-            
+            } 
         }
     }
 
@@ -226,8 +214,6 @@ public class CharacterAttack : MonoBehaviour
         GameObject grenade = Instantiate(grenadePrefab, grenadePoint.transform.position, Quaternion.identity);
         Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * grenadeSpeed, ForceMode2D.Impulse);
-
-
     }
     
     private void UseJetPack()
