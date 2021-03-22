@@ -5,19 +5,12 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField] 
-    private float speed = 10f;
-
-    private float damage = 10f;
-
+    [SerializeField] private float speed = 10f;
+    private float damage = 2f;
     private float lifeTime = 2f;
     private float currentLifeTime = 0.0f;
-
-    [SerializeField] 
-    private GameObject VFX = null;
-
-    [SerializeField]
-    private GameObject getShotSound = null;
+    [SerializeField] private GameObject VFX = null;
+    [SerializeField] private GameObject getShotSound = null;
 
     private void Start()
     {

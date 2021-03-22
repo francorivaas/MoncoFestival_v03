@@ -29,25 +29,17 @@ public class CharacterController : MonoBehaviour
     [SerializeField] 
     private Transform firePoint;
 
-    /*[SerializeField] private float timeToHeal = 10.0f;
-    private float currentTimeToHeal;
-    */
-
     private LifeController lifeController;
 
     private Animator animator;
-
-    //private SpriteRenderer moncoSprite;
 
     private void Awake()
     {
         audioSrc = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
-        //_lifeController.OnGetDamage += OnGetDamage;
         lifeController = GetComponent<LifeController>();
         lifeController.OnDeath.AddListener(OnDeathListener);
         lifeController.OnGetDamage += OnGetDamageHandler;
-        //moncoSprite = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -73,7 +65,7 @@ public class CharacterController : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 animator.SetBool("IsWalking", true);
-                /*var speedMov = */transform.position += transform.right * (speed * Time.deltaTime);
+                /*var speedMov = */ transform.position += transform.right * (speed * Time.deltaTime);
 
                 currentTimeToPlaySteps += Time.deltaTime;
                 

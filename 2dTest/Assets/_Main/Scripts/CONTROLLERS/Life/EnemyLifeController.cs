@@ -5,29 +5,37 @@ using UnityEngine;
 
 public class EnemyLifeController : MonoBehaviour
 {
-    [SerializeField] 
-    private float maxLife = 2.0f;
-
-    [SerializeField] 
+    private float maxLife = 4.0f;
     private float currentLife = 0.0f;
-
     public EnemyCounter enemyCounter;
+    private Animator animator = null;
+    public static bool isDead = false;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
         currentLife = maxLife;
+        isDead = false;
     }
 
     public void TakePlayerDamage(float damage)
     {
         currentLife -= damage;
 
+        if (currentLife <= 2f)
+            animator.SetBool("IsDying", true);
+
         if (currentLife <= 0)
         {
+            isDead = true;
             UIenemiesCounter.points++;
             EnemyCounter.enemiesKilled++;
 
-            Destroy(gameObject);
+            Destroy(gameObject, 0.6f);
         }
     }
     

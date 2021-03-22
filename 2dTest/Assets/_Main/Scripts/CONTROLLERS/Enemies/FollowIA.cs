@@ -5,23 +5,16 @@ using UnityEngine;
 
 public class FollowIA : MonoBehaviour
 {
-    [SerializeField] 
-    private float speed = 2f;
-
-    [SerializeField] 
-    private float stopDistance = 0.5f;
+    [SerializeField] private float speed = 2f;
+    [SerializeField] private float stopDistance = 0.5f;
 
     private Transform player;
 
-    //private LifeController lifeController;
-
-    [SerializeField]
-    private GameObject buzzSound = null;
+    [SerializeField] private GameObject buzzSound = null;
 
     private void Awake()
     {
-        //lifeController = GetComponent<LifeController>();
-        //lifeController.OnDeath.AddListener(OnDeathListener);
+
     }
 
     private void Start()
@@ -31,7 +24,7 @@ public class FollowIA : MonoBehaviour
     }
 
     private void Update()
-    {
+    {        
         if (!CutsceneController.isCutsceneOn)
         {
             if (Vector2.Distance(transform.position, player.position) > stopDistance)
@@ -42,28 +35,12 @@ public class FollowIA : MonoBehaviour
                 buzzSound.gameObject.SetActive(true);
             }
 
-
             if (transform.position.x > player.position.x)
-            {
                 transform.rotation = Quaternion.identity;
-            }
-
 
             else if (transform.position.x < player.position.x)
-            {
                 transform.Rotate(180, 0, 180);
-                //canExplode = true;
-
-            }
-        }
-
-        
+        }        
     }
-
-    /*private void OnDeathListener()
-    {
-
-    }
-    */
 }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public class TitleAnimationController : MonoBehaviour
 {
     private Animator animator;
@@ -24,3 +25,4 @@ public class TitleAnimationController : MonoBehaviour
         }
     }
 }
+*/
